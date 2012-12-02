@@ -38,15 +38,13 @@
     </head>
     <body>
 		<div id="fp_gallery" class="fp_gallery">
-			<div class="fp_bgPattern"></div>
-
 			<ul id="fp_galleryList" class="fp_galleryList">
 				<li>Paris</li>
 				<li>New York</li>
 			</ul>
-			<div id="fp_thumbContainer">
+			<div id="fp_thumbContainer_s">
 				<div id="fp_thumbScroller">
-					<div class="container">
+					<div class="container" id="first">
 						<div class="content">
 							<div><a href="#"><img src="images/album1/thumbs/1.jpg" alt="images/album1/1.jpg" class="thumb" /></a></div>
 						</div>
@@ -152,7 +150,7 @@
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js"></script>
 		<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
 		<script type="text/javascript">
-			$(function() {
+		    $(function () {
 				//caching
 				//the main wrapper of the gallery
 				var $fp_gallery			= $('#fp_gallery')
@@ -166,7 +164,7 @@
 				//the close button
 				var $fp_close			= $('#fp_close');
 				//the main container for the thumbs structure
-				var $fp_thumbContainer 	= $('#fp_thumbContainer');
+				var $fp_thumbContainer 	= $('#fp_thumbContainer_s');
 				//wrapper of jquery ui slider
 				var $fp_scrollWrapper	= $('#fp_scrollWrapper');
 				//total number of images
@@ -185,7 +183,7 @@
 				//some control flags:
 				//prevent fast clicks on next and previous
 				var photo_nav			= true;
-				
+
 				//User clicks on a city / gallery;
 				$fp_galleries.bind('click',function(){
 					$fp_galleries.removeClass('current');
@@ -224,8 +222,6 @@
 					var w_width 	= 0;
 					var padding_l	= 0;
 					var padding_r	= 0;
-					//center of screen
-					var center		= $(window).width()/2;
 					var one_divs_w  = 0;
 					/*
 					Note:
@@ -248,7 +244,7 @@
 					//innitialize the slider
 					$slider.slider('destroy').slider({
 						orientation	: 'horizontal',
-						max			: w_width - $(window).width(),//total width minus one content div width
+						max: w_width - $fp_thumbContainer.width(),//total width minus one content div width
 						min			: 0,
 						value		: 0,
 						slide		: function(event, ui) {
@@ -270,7 +266,7 @@
 					
 					//scroll all right;
 					$fp_thumbScroller.stop()
-									 .animate({'scrollLeft':'0px'},2000,'easeInOutExpo');
+									 .animate({'scrollLeft':'0px'},1000,'easeInOutExpo');
 
 					//User clicks on a content div (image)
 					$fp_content_wrapper.find('.content')
@@ -285,7 +281,7 @@
 						e.preventDefault();
 					});					
 				}
-				
+
 				//while the gallery scrolls we want that the slider scrolls as well
 				$fp_thumbScroller.scroll(function(){
 					$slider.slider('value',parseInt($fp_thumbScroller.scrollLeft(),10));
@@ -333,7 +329,7 @@
 					//after that it is removed from the DOM
 					$large_img.stop().animate({
 						'top'			: current_offset.top + windowS + 'px',
-						'left'			: $(window).width()/2 - $current.width()/2 + 'px',
+						'left': $fp_thumbContainer.width() / 2 - $current.width() / 2 + 'px',
 						'width'			: $current.width() + 'px',
 						'height'		: $current.height() + 'px',
 						'opacity'		: 0
@@ -354,7 +350,7 @@
 					//half of its width
 					var obj_center 			= obj_left + ($obj.width()/2);
 					//the center of the window
-					var center				= $(window).width()/2;
+					var center = $fp_thumbContainer.width() / 2;
 					//how much the scroller has scrolled already
 					var currentScrollLeft 	= parseFloat($fp_thumbScroller.scrollLeft(),10);
 					//so we know that in order to center the image,
@@ -609,6 +605,16 @@
 					current 			= $new_current.index();
 					centerImage($new_current,false,200);
 				}
+
+				$(window).load(function () {
+				    var w_width = 0;
+				    var $fp_content_wrapper = $('#first');
+				    var $gallery = $fp_content_wrapper;
+				    $gallery.addClass('current');
+				    var gallery_index = $gallery.index();
+				    gallery_idx = gallery_index;
+				    openGallery($gallery);
+				});
 			});
 		</script>
     </body>

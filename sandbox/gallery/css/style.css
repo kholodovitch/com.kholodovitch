@@ -75,6 +75,16 @@ ul.fp_galleryList li:hover{
 	-webkit-box-shadow:0px 0px 10px #000 inset;
 	box-shadow:0px 0px 10px #000 inset;
 }
+#fp_thumbContainer_s{
+	position:relative;
+	width: 50%;
+	margin:50px 0 30px 0;
+	height:240px;
+	background-color:#111;
+	-moz-box-shadow:0px 0px 10px #000 inset;
+	-webkit-box-shadow:0px 0px 10px #000 inset;
+	box-shadow:0px 0px 10px #000 inset;
+}
 #fp_thumbScroller{
 	position:relative;
 	overflow:hidden;	
