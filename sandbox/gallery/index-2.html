@@ -10,7 +10,21 @@
 		<script src="js/cufon-yui.js" type="text/javascript"></script>
 		<script src="js/GreyscaleBasic.font.js" type="text/javascript"></script>
 		<script type="text/javascript">
-			Cufon.replace('h1,h2,.fp_close,.reference');
+		    Cufon.replace('h1,h2,.fp_close,.reference');
+		    var gallereis = [];
+
+		    function addGallery(id, len) {
+		        var script = $($('script').get($('script').length - 1));
+		        var gallery = $('<div/>', { 'class': 'container, current' });
+		        for (i = 0; i < len; i++) {
+		            var fileName = (i % 3 + 1) + '.jpg';
+		            var galleryDir = 'images/album' + id;
+		            gallery.append($('<div class="content"><div><a href=""><img src="' + galleryDir + '/thumbs/' + fileName + '" alt="' + galleryDir + '/' + fileName + '" class="thumb" /></a></div></div>'));
+		        }
+		        script.after(gallery);
+		        script.remove(script.index());
+		        gallereis.push(gallery);
+		    }
 		</script>
 		
 		<link type="text/css" href="css/jquery.ui.theme.css" rel="stylesheet" />
@@ -38,99 +52,14 @@
     </head>
     <body>
 		<div id="fp_gallery" class="fp_gallery">
-			<ul id="fp_galleryList" class="fp_galleryList">
-				<li>Paris</li>
-				<li>New York</li>
-			</ul>
 			<div id="fp_thumbContainer_s">
 				<div id="fp_thumbScroller">
-					<div class="container" id="first">
-						<div class="content">
-							<div><a href="#"><img src="images/album1/thumbs/1.jpg" alt="images/album1/1.jpg" class="thumb" /></a></div>
-						</div>
-						<div class="content">
-							<div><a href="#"><img src="images/album1/thumbs/2.jpg" alt="images/album1/2.jpg" class="thumb" /></a></div>
-						</div>
-						<div class="content">
-							<div><a href="#"><img src="images/album1/thumbs/3.jpg" alt="images/album1/3.jpg" class="thumb" /></a></div>
-						</div>
-						<div class="content">
-							<div><a href="#"><img src="images/album1/thumbs/1.jpg" alt="images/album1/1.jpg" class="thumb" /></a></div>
-						</div>
-						<div class="content">
-							<div><a href="#"><img src="images/album1/thumbs/2.jpg" alt="images/album1/2.jpg" class="thumb" /></a></div>
-						</div>
-						<div class="content">
-							<div><a href="#"><img src="images/album1/thumbs/3.jpg" alt="images/album1/3.jpg" class="thumb" /></a></div>
-						</div>
-						<div class="content">
-							<div><a href="#"><img src="images/album1/thumbs/1.jpg" alt="images/album1/1.jpg" class="thumb" /></a></div>
-						</div>
-						<div class="content">
-							<div><a href="#"><img src="images/album1/thumbs/2.jpg" alt="images/album1/2.jpg" class="thumb" /></a></div>
-						</div>
-						<div class="content">
-							<div><a href="#"><img src="images/album1/thumbs/3.jpg" alt="images/album1/3.jpg" class="thumb" /></a></div>
-						</div>
-						<div class="content">
-							<div><a href="#"><img src="images/album1/thumbs/1.jpg" alt="images/album1/1.jpg" class="thumb" /></a></div>
-						</div>
-						<div class="content">
-							<div><a href="#"><img src="images/album1/thumbs/2.jpg" alt="images/album1/2.jpg" class="thumb" /></a></div>
-						</div>
-						<div class="content">
-							<div><a href="#"><img src="images/album1/thumbs/3.jpg" alt="images/album1/3.jpg" class="thumb" /></a></div>
-						</div>
-					</div>
-					<div class="container">
-						<div class="content">
-							<div><a href="#"><img src="images/album2/thumbs/1.jpg" alt="images/album2/1.jpg" class="thumb" /></a></div>
-						</div>
-						<div class="content">
-							<div><a href="#"><img src="images/album2/thumbs/2.jpg" alt="images/album2/2.jpg" class="thumb" /></a></div>
-						</div>
-						<div class="content">
-							<div><a href="#"><img src="images/album2/thumbs/3.jpg" alt="images/album2/3.jpg" class="thumb" /></a></div>
-						</div>
-						<div class="content">
-							<div><a href="#"><img src="images/album2/thumbs/1.jpg" alt="images/album2/1.jpg" class="thumb" /></a></div>
-						</div>
-						<div class="content">
-							<div><a href="#"><img src="images/album2/thumbs/2.jpg" alt="images/album2/2.jpg" class="thumb" /></a></div>
-						</div>
-						<div class="content">
-							<div><a href="#"><img src="images/album2/thumbs/3.jpg" alt="images/album2/3.jpg" class="thumb" /></a></div>
-						</div>						
-						<div class="content">
-							<div><a href="#"><img src="images/album2/thumbs/1.jpg" alt="images/album2/1.jpg" class="thumb" /></a></div>
-						</div>
-						<div class="content">
-							<div><a href="#"><img src="images/album2/thumbs/2.jpg" alt="images/album2/2.jpg" class="thumb" /></a></div>
-						</div>
-						<div class="content">
-							<div><a href="#"><img src="images/album2/thumbs/3.jpg" alt="images/album2/3.jpg" class="thumb" /></a></div>
-						</div>						
-						<div class="content">
-							<div><a href="#"><img src="images/album2/thumbs/1.jpg" alt="images/album2/1.jpg" class="thumb" /></a></div>
-						</div>
-						<div class="content">
-							<div><a href="#"><img src="images/album2/thumbs/2.jpg" alt="images/album2/2.jpg" class="thumb" /></a></div>
-						</div>
-						<div class="content">
-							<div><a href="#"><img src="images/album2/thumbs/3.jpg" alt="images/album2/3.jpg" class="thumb" /></a></div>
-						</div>
-						<div class="content">
-							<div><a href="#"><img src="images/album2/thumbs/1.jpg" alt="images/album2/1.jpg" class="thumb" /></a></div>
-						</div>
-						<div class="content">
-							<div><a href="#"><img src="images/album2/thumbs/2.jpg" alt="images/album2/2.jpg" class="thumb" /></a></div>
-						</div>
-						<div class="content">
-							<div><a href="#"><img src="images/album2/thumbs/3.jpg" alt="images/album2/3.jpg" class="thumb" /></a></div>
-						</div>
-
-					</div>
-					
+		            <script type="text/javascript">
+		                addGallery(1, 9);
+		            </script>
+		            <script type="text/javascript">
+		                addGallery(2, 9);
+		            </script>
 				</div>
 			</div>
 
@@ -175,41 +104,18 @@
 				var $fp_thumbScroller	= $('#fp_thumbScroller');
 				//jquery ui slider
 				var $slider				= $('#slider');
-				//the links of the galleries (the cities)
-				var $fp_galleries		= $('#fp_galleryList > li');
 				//current image being viewed
 				var current				= 0;
-				
 				//some control flags:
 				//prevent fast clicks on next and previous
 				var photo_nav			= true;
-
-				//User clicks on a city / gallery;
-				$fp_galleries.bind('click',function(){
-					$fp_galleries.removeClass('current');
-					var $gallery 		= $(this);
-					$gallery.addClass('current');
-					var gallery_index 	= $gallery.index();
-					if(gallery_idx == gallery_index) return;
-					gallery_idx			= gallery_index;
-					//close the gallery and slider if opened
-					if($fp_thumbContainer.data('opened')==true){
-						$fp_scrollWrapper.fadeOut();
-						$fp_thumbContainer.stop()
-										  .animate({'height':'0px'},200,function(){
-											openGallery($gallery);
-										  });
-					}				  
-					else
-						openGallery($gallery);
-				});
 					
 				//opens a gallery after cliking on a city / gallery
 				function openGallery($gallery){
 					//current gets reseted
 					current				= 0;				  
 					//wrapper of each content div, where each image is
-					var $fp_content_wrapper = $fp_thumbContainer.find('.container:nth-child('+parseInt(gallery_idx+1)+')');
+					var $fp_content_wrapper = $gallery;//$fp_thumbContainer.find('.container:nth-child(' + parseInt(gallery_idx + 1) + ')');
 					//hide all the other galleries thumbs wrappers
 					$fp_thumbContainer.find('.container').not($fp_content_wrapper).hide();
 					//and show this one
@@ -273,6 +179,7 @@
 									 .bind('click',function(e){
 						var $current 	= $(this);
 						//track the current one
+						gallery_idx = $current.parent().index();
 						current			= $current.index();
 						//center and show this image
 						//the second parameter set to true means we want to 
@@ -321,15 +228,17 @@
 					//the large image being viewed
 					var $large_img		= $('#fp_preview');
 					//the current thumb
-					var $current 		= $fp_thumbScroller.find('.container:nth-child('+parseInt(gallery_idx+1)+')')
-														   .find('.content:nth-child('+parseInt(current+1)+')');
-					//offset values of current thumb
+					var $current = $fp_thumbScroller
+                        .find('div:nth-child(' + parseInt(gallery_idx + 1) + ')')
+                        .find('.content:nth-child(' + parseInt(current + 1) + ')');
+
+				    //offset values of current thumb
 					var current_offset	= $current.offset();
 					//the large image will animate in the direction of the center
 					//after that it is removed from the DOM
 					$large_img.stop().animate({
 						'top'			: current_offset.top + windowS + 'px',
-						'left': $fp_thumbContainer.width() / 2 - $current.width() / 2 + 'px',
+						'left'			: current_offset.left + 'px',
 						'width'			: $current.width() + 'px',
 						'height'		: $current.height() + 'px',
 						'opacity'		: 0
@@ -345,7 +254,7 @@
 				//centers an image and opens it if open is true
 				function centerImage($obj,open,speed){
 					//the offset left of the element
-					var obj_left 			= $obj.offset().left;
+					var obj_left 			= $obj.offset().left - $fp_thumbScroller.offset().left;
 					//the center of the element is its offset left plus 
 					//half of its width
 					var obj_center 			= obj_left + ($obj.width()/2);
@@ -605,15 +514,10 @@
 					current 			= $new_current.index();
 					centerImage($new_current,false,200);
 				}
-
+				
 				$(window).load(function () {
-				    var w_width = 0;
-				    var $fp_content_wrapper = $('#first');
-				    var $gallery = $fp_content_wrapper;
-				    $gallery.addClass('current');
-				    var gallery_index = $gallery.index();
-				    gallery_idx = gallery_index;
-				    openGallery($gallery);
+				    for (i = 0; i < gallereis.length; i++)
+				        openGallery(gallereis[i]);
 				});
 			});
 		</script>
