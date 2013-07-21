@@ -58,6 +58,21 @@ form {
 	font-weight: normal;
 	vertical-align:bottom;
 }
+#social {
+	margin-top: -12px;
+	display: inline;
+	float: right;
+}
+#social img {
+	margin-left: 8px;
+	width: 32px;
+	height: 32px;
+}
+
+#social img.last_in_group {
+	padding-right: 12px;
+	border-right: 1px solid #d0d0d0;
+}
 #menu {
 	margin-top: 10px;
 	display: inline;
