@@ -7,16 +7,16 @@ addons:
             - sshpass
 
 script:
-
-before_install: npm install -g grunt-cli
-
-install:
-
-after_success:
     - mkdir build
     - cp -R ./!(build) build
     - tar -czf package.tgz build
     - rm -rf build
+
+before_install: npm install -g grunt-cli
+
+install:
     - export SSHPASS=$DEPLOY_PASS
     - sshpass -e scp package.tgz $DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH
     - sshpass -e ssh $DEPLOY_USER@$DEPLOY_HOST $DEPLOY_PATH/deploy.sh $DEPLOY_SITE
+
+
