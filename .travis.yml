@@ -6,13 +6,13 @@ addons:
         packages:
             - sshpass
 
-script:
+script: npm install -g grunt-cli
+
+before_install: 
     - mkdir build
     - cp -R ./!(build) build
     - tar -czf package.tgz build
     - rm -rf build
-
-before_install: npm install -g grunt-cli
 
 install:
     - export SSHPASS=$DEPLOY_PASS
