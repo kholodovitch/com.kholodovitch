@@ -72,6 +72,9 @@ form {
 #social img.last_in_group {
 	padding-right: 12px;
 	border-right: 1px solid #d0d0d0;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
 }
 #menu {
 	margin-top: 10px;
