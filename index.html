@@ -11,6 +11,12 @@
         * {
             box-sizing: border-box;
         }
+
+        h3 {
+            font-size: 1.25em;
+            margin-bottom: 0.4em;
+        }
+
         #photo_avatar {
             width: 180px; height: 270px;
             image-rendering: pixelated;
@@ -32,9 +38,21 @@
             height: 200px;
             margin-bottom: 10px;
             float: left;
-            border: 0.5px solid #333;
+            border: 0px solid #333;
             border-radius: 2px;
+            overflow: hidden;
         }
+
+            .grid-item img {
+                width: 100%;
+            }
+
+            .grid-item .text {
+                background: -webkit-linear-gradient(transparent, rgba(255, 255, 255, 0.85) 1.2em, white 3.2em, white);
+                position: absolute;
+                bottom: 0px;
+                width: 100%;
+            }
 
         .grid-sizer,
         .grid-item {
@@ -111,11 +129,11 @@
                                 Опыт работы</h2>
                         </a>
                         <br />
-<!--
                         <a href="#portfolio">
                             <h2>
                                 Портфолио</h2>
                         </a>
+<!--
                         <br />
                     </ul>
 -->
@@ -226,15 +244,15 @@
                         <h2>Портфолио</h2>
                         <div class="left_col">
                             <b>
-                                Desktop development<br />
-                                DigitalDev GmbH<br />
-                            </b>апрель 2005 – август 2007
+                                Desktop development
+                            </b>
                         </div>
                         <div class="portfolio" style="width: calc(100% - 200px); margin-left: 200px; ">
                             <div class="grid-sizer"></div>
                             <div class="gutter-sizer"></div>
-                            <div class="grid-item grid-item--width2 grid-item--height2"></div>
-                            <div class="grid-item grid-item--width2 grid-item--height2"></div>
+                            <div class="grid-item grid-item--width2 grid-item--height2"><img src="visuscreen_02.png" /><div class="text"><h3>VisuScreen</h3>Digital signage клиент-серверная система</div></div>
+                            <div class="grid-item grid-item--width2 grid-item--height2"><img src="freelance_visuscreen.jpg" /><div class="text"><h3>VisuPrint</h3>Система создания печатных рекламных материалов на базе шаблонов</div></div>
+                            <div class="grid-item"></div>
                             <div class="grid-item"></div>
                             <div class="grid-item"></div>
                             <div class="grid-item"></div>
@@ -254,7 +272,7 @@
         <!-- End id=wrapper -->
     </div>
     <!-- End align=center -->
-
+<!--
 	<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -264,13 +282,14 @@
 		ga('create', 'UA-71308836-1', 'auto');
 		ga('send', 'pageview');
 	</script>
-
+-->
     <script>
         var masonry = new Masonry('.portfolio', {
             columnWidth: '.grid-sizer',
             gutter: '.gutter-sizer',
             itemSelector: '.grid-item',
-            percentPosition: true
+            percentPosition: true,
+            transitionDuration: 0
         });
 
         function udpatePortfolioItemSizes() {
