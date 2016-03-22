@@ -56,15 +56,15 @@
 
         .grid-sizer,
         .grid-item {
-            width: 16%;
+            width: 15%;
         }
 
         .gutter-sizer {
-            width: 0.8%;
+            width: 2%;
         }
 
         .grid-item--width2 {
-            width: 32.8%;
+            width: 32%;
         }
 
         .grid-item--height2 {
@@ -242,26 +242,19 @@
                     <div style="clear: both;"></div>
                     <div id="portfolio" style="float: left; width: 100%">
                         <h2>Портфолио</h2>
-                        <div class="left_col">
-                            <b>
-                                Desktop development
-                            </b>
-                        </div>
-                        <div class="portfolio" style="width: calc(100% - 200px); margin-left: 200px; ">
+                        <h3>
+                            Desktop development
+                        </h3>
+                        <div class="portfolio" style="width: calc(100%); margin-left: 0px; ">
                             <div class="grid-sizer"></div>
                             <div class="gutter-sizer"></div>
                             <div class="grid-item grid-item--width2 grid-item--height2"><img src="visuscreen_02.png" /><div class="text"><h3>VisuScreen</h3>Digital signage клиент-серверная система</div></div>
                             <div class="grid-item grid-item--width2 grid-item--height2"><img src="freelance_visuscreen.jpg" /><div class="text"><h3>VisuPrint</h3>Система создания печатных рекламных материалов на базе шаблонов</div></div>
+                            <div class="grid-item grid-item--width2 grid-item--height2"><img src="freelance_visuscreen.jpg" /><div class="text"><h3>VisuPrint</h3>Система создания печатных рекламных материалов на базе шаблонов</div></div>
+                            <div class="grid-item grid-item--width2 grid-item--height2"><img src="freelance_visuscreen.jpg" /><div class="text"><h3>VisuPrint</h3>Система создания печатных рекламных материалов на базе шаблонов</div></div>
+                            <div class="grid-item grid-item--width2 grid-item--height2"><img src="freelance_visuscreen.jpg" /><div class="text"><h3>VisuPrint</h3>Система создания печатных рекламных материалов на базе шаблонов</div></div>
+                            <div class="grid-item grid-item--width2 grid-item--height2"><img src="freelance_visuscreen.jpg" /><div class="text"><h3>VisuPrint</h3>Система создания печатных рекламных материалов на базе шаблонов</div></div>
                             <div class="grid-item"></div>
-                            <div class="grid-item"></div>
-                            <div class="grid-item"></div>
-                            <div class="grid-item"></div>
-                            <div class="grid-item"></div>
-                            <div class="grid-item"></div>
-                            <div class="grid-item"></div>
-                            <div class="grid-item"></div>
-                            <div class="grid-item"></div>
-                        </div>
                     </div>
                 </div>
                 <div id="ft">
@@ -296,11 +289,11 @@
             var cw = $('.grid-item').last().width();
             var gw = $('.gutter-sizer').last().width();
             $('.grid-item').css({
-                'height': cw * 0.75 + 'px',
+                'height': cw * 0.85 + 'px',
                 'margin-bottom': gw + 'px'
             });
             $('.grid-item--height2').css({
-                'height': (cw * 2 * 0.75 + gw) + 'px'
+                'height': (cw * 2 * 0.85 + gw) + 'px'
             });
             
             masonry.layout();
