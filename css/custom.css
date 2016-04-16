@@ -1,6 +1,23 @@
-.left_col {
+#contacts {
+	padding-left: 245px;
+	height: 290px;
+}
+
+.general_title {
 	float: left;
 	text-align: right;
-	width: 186px;
+	width: 150px;
+	font-weight: bold;
+	padding-right: 0.3em;
+}
+
+.exp_col_title {
+	float: left;
+	text-align: right;
+	width: 231px;
 	margin-left: -6px;
+}
+
+.exp_col_desc {
+	padding-left: 245px;
 }

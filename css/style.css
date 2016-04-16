@@ -30,7 +30,7 @@ License: http://www.opensource.org/licenses/gpl-license.php
 
 body {
 	background: #ffffff;
-	font-size: 9pt;
+	font-size: 11pt;
 	line-height: 1.5;
 	color: #505050;
 	font-family: Verdana, Arial, Helvetica, sans-serif;
@@ -85,23 +85,27 @@ form {
 }
 #menu ul li {
 	float: left;
-}
-#menu ul li a {
 	font-size: 10pt;
-	padding-left: 15px;
 	font-weight: bold;
-	text-decoration: none;
-	color: #505050;
-
+	padding-left: 15px;
 	margin-left: 15px;
 	border-left: 1px solid #e0e0e0;
+}
+#menu li:first-child {
+	padding-left: 0px;
+	margin-left: 0px;
+	border-left: none;
+} 
+#menu ul li a {
+	text-decoration: none;
+	color: #505050;
 }
 #menu ul li a:hover {
 	color: #f26522;
 }
 
 #blogdescription {
-	color: #909090;
+	color: #b0b0b0;
 	font-size:10pt;
 	font-weight: bold;
 }
@@ -134,7 +138,6 @@ form {
 }
 
 #bd {
-	margin: 0px 230px 0px 0px;
         color: #505050;
 }
 #sidebar {	
