@@ -171,12 +171,8 @@ li.vategories ul {
 	margin-top: 4px;
 	display: block;
 }
-#sidebar a, #contacts a {
-	color: #505050;
-	text-decoration: none;
-}
 #sidebar a:hover, #contacts a:hover {
-	color: #f26522;
+	text-decoration: underline;
 }
 #sidebar h2 {
 	font-size: 12pt;

@@ -21,3 +21,12 @@
 .exp_col_desc {
 	padding-left: 245px;
 }
+
+a {
+	color: #f26522;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
